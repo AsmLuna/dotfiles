@@ -1,0 +1,86 @@
+* {
+    border: none;
+    font-family: "Inter", "Font Awesome 6 Free", sans-serif;
+    font-size: 12px;
+    min-height: 0;
+}
+
+#waybar {
+    background: rgba(30, 30, 46, 0.4); /* Base bar transparency */
+    color: #cdd6f4;
+    border-radius: 16px;
+    margin: 16px;
+    padding: 0 8px;
+}
+
+/* Workspaces - keep original styling */
+#workspaces button {
+    color: #a6adc8;
+    background: transparent;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+    background: rgba(203, 166, 247, 0.15);
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+/* All modules - consistent volume-like background */
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#battery,
+#custom-power,
+#custom-media,
+#memory,
+#cpu,
+#temperature {
+    background: rgba(49, 50, 68, 0.3); /* Consistent volume background */
+    color: #cdd6f4;
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.3; }
+}
+
+#tray > * {
+    padding: 0 6px;
+}
+
+#custom-power {
+    color: #f38ba8;
+    padding-right: 14px;
+}
+
+tooltip {
+    background: rgba(30, 30, 46, 0.9);
+    border: 1px solid #313244;
+    border-radius: 12px;
+}
